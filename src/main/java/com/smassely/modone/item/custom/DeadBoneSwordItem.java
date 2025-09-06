@@ -29,6 +29,7 @@ public class DeadBoneSwordItem extends SwordItem {
             skul.setOwner(user);
             skul.setVelocity(user, user.getPitch(), user.getYaw(),0f,3f,0f);
 
+
             world.spawnEntity(skul);
             ModOne.LOGGER.info("clicked");
             if (!user.isCreative()){
