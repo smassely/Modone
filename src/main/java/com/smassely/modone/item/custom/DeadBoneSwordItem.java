@@ -34,7 +34,6 @@ public class DeadBoneSwordItem extends SwordItem {
             ModOne.LOGGER.info("clicked");
             if (!user.isCreative()){
 
-
             }
         }
 
