@@ -13,8 +13,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-import static com.ibm.icu.lang.UCharacter.GraphemeClusterBreak.T;
-
 public class DeadBoneSwordItem extends SwordItem {
     public DeadBoneSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
@@ -22,21 +20,32 @@ public class DeadBoneSwordItem extends SwordItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack itemStack = user.getStackInHand(hand);
 
-        if (!world.isClient){
-            WitherSkullEntity skul = new WitherSkullEntity(EntityType.WITHER_SKULL, world);
-            skul.setPosition(user.getX(), user.getEyeY(), user.getZ());
-            skul.setOwner(user);
-            skul.setVelocity(user, user.getPitch(), user.getYaw(),0f,3f,0f);
-
-
-            world.spawnEntity(skul);
-            ModOne.LOGGER.info("clicked");
-            if (!user.isCreative()){
-
-            }
+        // Check if item is on cooldown
+        if (user.getItemCooldownManager().isCoolingDown(this)) {
+            return TypedActionResult.fail(itemStack);
         }
 
-        return super.use(world, user, hand);
+        if (!world.isClient) {
+            WitherSkullEntity skull = new WitherSkullEntity(EntityType.WITHER_SKULL, world);
+            skull.setPosition(user.getX(), user.getEyeY(), user.getZ());
+            skull.setOwner(user);
+            skull.setVelocity(user, user.getPitch(), user.getYaw(), 0f, 3f, 0f);
+            world.spawnEntity(skull);
+
+            ModOne.LOGGER.info("clicked");
+
+            if (!user.isCreative()) {
+                if (user.getStackInHand(hand).getDamage() <= user.getStackInHand(hand).getMaxDamage() - 1) {
+                    user.getStackInHand(hand).setDamage(user.getStackInHand(hand).getDamage() + 1);
+                }
+            }
+
+            user.getItemCooldownManager().set(this, 15);
+        }
+
+//        return TypedActionResult.success(itemStack);
+        return super.use(world,user,hand);
     }
 }
