@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
 
-    public static final Item DEADBONESWORD = registerItem("dead_bone_sword", new DeadBoneSwordItem(ToolMaterials.DIAMOND,3,3.0f, new FabricItemSettings()));
+    public static final Item DEADBONESWORD = registerItem("dead_bone_sword", new DeadBoneSwordItem(ToolMaterials.NETHERITE,5,-2.4f, new FabricItemSettings()));
 
     public static void addItemsToIngredientGroup(FabricItemGroupEntries entries){
 
