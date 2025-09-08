@@ -1,10 +1,13 @@
 package com.smassely.modone;
 
+import com.smassely.modone.entity.ModEntities;
+import com.smassely.modone.renderer.RadianceOrbRenderer;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 
 public class ModOneClient implements ClientModInitializer {
-	@Override
-	public void onInitializeClient() {
-		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
-	}
+    @Override
+    public void onInitializeClient() {
+        EntityRendererRegistry.register(ModEntities.RADIANCEORB, RadianceOrbRenderer::new);
+    }
 }

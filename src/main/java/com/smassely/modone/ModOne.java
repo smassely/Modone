@@ -1,5 +1,6 @@
 package com.smassely.modone;
 
+import com.smassely.modone.entity.ModEntities;
 import com.smassely.modone.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -17,6 +18,7 @@ public class ModOne implements ModInitializer {
 	public void onInitialize() {
 
         ModItems.registerModItems();
+        ModEntities.register();
 		LOGGER.info("Hello Fabric world!");
 	}
 }
