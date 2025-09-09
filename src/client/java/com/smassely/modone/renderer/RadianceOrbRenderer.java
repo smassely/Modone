@@ -1,8 +1,6 @@
 package com.smassely.modone.renderer;
 
-import com.smassely.modone.ModOne;
 import com.smassely.modone.entity.custom.RadianceOrb;
-
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
@@ -12,8 +10,8 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
-public class RadianceOrbRenderer extends EntityRenderer<com.smassely.modone.entity.custom.RadianceOrb> {
-    private static final Identifier TEXTURE = new Identifier("minecraft", "entity/wither/wither_invulnerable");
+public class RadianceOrbRenderer extends EntityRenderer<RadianceOrb> {
+    private static final Identifier TEXTURE = new Identifier("modone", "textures/entity/radiance_orb.png");
 
     public RadianceOrbRenderer(EntityRendererFactory.Context context) {
         super(context);
@@ -49,6 +47,7 @@ public class RadianceOrbRenderer extends EntityRenderer<com.smassely.modone.enti
         matrices.pop();
         super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
     }
+
 
     private void addQuad(MatrixStack.Entry entry, VertexConsumer vertices,
                          float x1, float y1, float z1, float x2, float y2, float z2,

@@ -13,11 +13,12 @@ import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class ModItems {
 
     public static final Item DEADBONESWORD = registerItem("dead_bone_sword", new DeadBoneSwordItem(ToolMaterials.NETHERITE,5,-2.4f, new FabricItemSettings()));
-    public static final Item CELESTITEEDGE = registerItem("celestite_edge", new CelesetiteEdgeItem(ToolMaterials.NETHERITE, 6, -2.2f, new FabricItemSettings()));
+    public static final Item CELESTITEEDGE = registerItem("celestite_edge", new CelesetiteEdgeItem(ToolMaterials.NETHERITE, 6, -2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
 //    public static final Item RADIANCE_ORB_ITEM = new Item(new Item.Settings());
 
     public static void addItemsToIngredientGroup(FabricItemGroupEntries entries){
