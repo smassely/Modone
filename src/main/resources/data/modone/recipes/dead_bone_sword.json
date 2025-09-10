@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#":{
+      "item": "minecraft:nether_star"
+    },
+    "N": {
+      "item": "minecraft:netherite_sword"
+    },
+    "W": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "S": {
+      "item": "minecraft:soul_sand"
+    }
+
+  },
+  "pattern": [
+    "WWW",
+    "S#S",
+    " N "
+  ],
+  "result": {
+    "item": "modone:dead_bone_sword",
+    "count": 1
+  }
+}
