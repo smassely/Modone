@@ -32,7 +32,7 @@ public class CelesetiteEdgeItem extends SwordItem {
         if (!world.isClient) {
 
             radiance.setPosition(user.getX(), user.getEyeY(), user.getZ());
-            radiance.setVelocity(user, user.getPitch(),user.getYaw(), 0f,3f,0f);
+            radiance.setVelocity(user, user.getPitch(),user.getYaw(), 0f,5f,0f);
 
             world.spawnEntity(radiance);
 

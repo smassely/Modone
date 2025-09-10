@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#":{
+      "item": "minecraft:nether_star"
+    },
+    "N": {
+      "item": "modone:dead_bone_sword"
+    },
+    "E": {
+      "item": "minecraft:end_rod"
+    }
+
+  },
+  "pattern": [
+    " E ",
+    "#N#",
+    " E "
+  ],
+  "result": {
+    "item": "modone:celestite_edge",
+    "count": 1
+  }
+}
