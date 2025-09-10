@@ -48,7 +48,7 @@ public class DeadBoneSwordItem extends SwordItem {
                             }
                         });
                     }
-                }, 3000); // 5000ms = 5 seconds delay
+                }, 3000);
             });
             user.getItemCooldownManager().set(this, 10);
         }
