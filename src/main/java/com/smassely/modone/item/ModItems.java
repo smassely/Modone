@@ -3,6 +3,8 @@ package com.smassely.modone.item;
 import com.smassely.modone.ModOne;
 import com.smassely.modone.item.custom.CelesetiteEdgeItem;
 import com.smassely.modone.item.custom.DeadBoneSwordItem;
+import com.smassely.modone.item.custom.FunnyWand;
+
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -19,7 +21,7 @@ public class ModItems {
 
     public static final Item DEADBONESWORD = registerItem("dead_bone_sword", new DeadBoneSwordItem(ToolMaterials.NETHERITE,5,-2.4f, new FabricItemSettings()));
     public static final Item CELESTITEEDGE = registerItem("celestite_edge", new CelesetiteEdgeItem(ToolMaterials.NETHERITE, 6, -2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
-//    public static final Item RADIANCE_ORB_ITEM = new Item(new Item.Settings());
+    public static final Item FUNNYWAND =registerItem("funny_wand", new FunnyWand(new FabricItemSettings()));
 
     public static void addItemsToIngredientGroup(FabricItemGroupEntries entries){
 
