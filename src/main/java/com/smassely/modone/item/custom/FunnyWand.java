@@ -1,5 +1,8 @@
 package com.smassely.modone.item.custom;
 
+import com.smassely.modone.ModOne;
+
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.Item;
@@ -12,10 +15,6 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-
-import java.util.random.RandomGenerator;
-
-import com.smassely.modone.ModOne;
 
 
 
@@ -48,7 +47,12 @@ public class FunnyWand extends Item{
                 int Randint = RNG.nextInt(1, pool);
                 ModOne.LOGGER.info(Integer.toString(Randint));
                 if (Randint<=10) {
+                    EntityType<?> type = cast.getEntity().getType();
+                    String typeName = EntityType.getId(type).toString(); 
+                    user.sendMessage(Text.literal("Farid joined the game").formatted(Formatting.YELLOW), false);
                     cast.getEntity().kill();
+                    user.sendMessage(Text.literal(type.getName().getString() +  " was raped by Farid"), false);
+                    user.sendMessage(Text.literal("Farid left the game").formatted(Formatting.YELLOW), false);
                 }
 
             }

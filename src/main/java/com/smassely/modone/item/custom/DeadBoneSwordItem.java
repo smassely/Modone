@@ -1,8 +1,6 @@
 package com.smassely.modone.item.custom;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.WitherSkullEntity;
 import net.minecraft.item.ItemStack;
