@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "modone:item/celestite_edge"
+    "layer0": "modone:item/funny_wand"
   }
 }
