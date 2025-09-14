@@ -23,17 +23,22 @@ import com.smassely.modone.ModOne;
 public class FunnyWand extends Item{
 
     public FunnyWand(Settings settings) {
+        
         super(settings);
+        
+    }
+
+    private static void FaridFight(PlayerEntity fighter){
         
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-
+        
         Vec3d start = user.getCameraPosVec(1.0F);
         Vec3d dir = user.getRotationVec(1.0F);
         Vec3d end = start.add(dir.multiply(15.0F));
-        
+        ItemStack stack = user.getStackInHand(hand);
         int pool = 100;
         java.util.Random RNG = new java.util.Random();
 
@@ -46,9 +51,24 @@ public class FunnyWand extends Item{
         
             if(cast != null && cast.getEntity().isAlive()){
                 int Randint = RNG.nextInt(1, pool);
+                // int Randint = 12;
                 ModOne.LOGGER.info(Integer.toString(Randint));
                 if (Randint<=10) {
                     cast.getEntity().kill();
+                }
+                else if (Randint == 11) {
+                    if (user.isAlive()) {
+                        user.kill();
+                        user.sendMessage(Text.literal("Playing with people is to be punished").formatted(Formatting.RED).formatted(Formatting.BOLD));
+                    }
+                }
+                else if (Randint == 12){
+                    if (user.getStackInHand(hand).getDamage() < user.getStackInHand(hand).getMaxDamage()) {
+                        stack.damage(stack.getMaxDamage(), user, (player) -> player.sendToolBreakStatus(hand));
+                    }
+                }
+                else if (Randint == 13) {
+                    
                 }
 
             }
