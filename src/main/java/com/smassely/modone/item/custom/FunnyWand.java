@@ -1,7 +1,6 @@
 package com.smassely.modone.item.custom;
 
 import com.smassely.modone.ModOne;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
@@ -37,6 +36,7 @@ public class FunnyWand extends Item{
         super(settings);
         
     }
+
     public static void makeHollowCube(World world, BlockPos origin, int size, BlockState state, boolean clear) {
         if (world.isClient) return;
         int x0 = origin.getX();
@@ -92,8 +92,8 @@ public class FunnyWand extends Item{
             fighter.getX(),
             fighter.getY(),
             fighter.getZ(),
-        0f,   // yaw
-        0f    // pitch
+        0f,
+        0f   
             );
         } 
         else{
@@ -115,7 +115,8 @@ public class FunnyWand extends Item{
             null, 
             null
         );   
-        farid.setCustomName(Text.literal("Farid".formatted(Formatting.RED).formatted(Formatting.BOLD)));    
+        farid.setCustomName(Text.literal("Farid").formatted(Formatting.RED, Formatting.BOLD));
+        farid.setCustomNameVisible(true);    
         farid.setPersistent();
         farid.setPose(EntityPose.STANDING);
         
@@ -158,8 +159,8 @@ public class FunnyWand extends Item{
             EntityHitResult cast = ProjectileUtil.getEntityCollision(world, user, start, end, box,  entity -> !entity.isSpectator() && entity.isAlive() && entity.canHit());
         
             if(cast != null && cast.getEntity().isAlive()){
-                int Randint = RNG.nextInt(1, pool);
-                // int Randint = 13;
+                // int Randint = RNG.nextInt(1, pool);
+                int Randint = 13;
                 ModOne.LOGGER.info(Integer.toString(Randint));
                 if (Randint<=10) {
                     EntityType<?> type = cast.getEntity().getType();
