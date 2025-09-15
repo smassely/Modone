@@ -1,11 +1,16 @@
 package com.smassely.modone.entity;
 
+import javax.swing.text.html.parser.Entity;
+
 import com.smassely.modone.ModOne;
+import com.smassely.modone.entity.custom.FaridEntity;
 import com.smassely.modone.entity.custom.RadianceOrb;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.mob.WardenEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,7 +26,12 @@ public class ModEntities {
 //                    .trackedUpdateRate(10)
                     .build()
     );
-
+    public static final EntityType<FaridEntity> FARID= Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(ModOne.MOD_ID, "farid"),
+            FabricEntityTypeBuilder.<FaridEntity>create(SpawnGroup.MONSTER, FaridEntity::new)
+            .dimensions(EntityDimensions.fixed(0.9f, 2.9f))
+            .trackRangeBlocks(48)
+            .build());
 
     public static void register() {
         // Ensure this class is loaded
