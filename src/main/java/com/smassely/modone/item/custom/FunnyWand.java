@@ -158,8 +158,8 @@ public class FunnyWand extends Item{
             EntityHitResult cast = ProjectileUtil.getEntityCollision(world, user, start, end, box,  entity -> !entity.isSpectator() && entity.isAlive() && entity.canHit());
         
             if(cast != null && cast.getEntity().isAlive()){
-                // int Randint = RNG.nextInt(1, pool);
-                int Randint = 13;
+                int Randint = RNG.nextInt(1, pool);
+                // int Randint = 13;
                 ModOne.LOGGER.info(Integer.toString(Randint));
                 if (Randint<=10) {
                     EntityType<?> type = cast.getEntity().getType();
