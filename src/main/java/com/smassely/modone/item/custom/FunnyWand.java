@@ -116,7 +116,7 @@ public class FunnyWand extends Item{
             null
         );   
         farid.setCustomName(Text.literal("Farid").formatted(Formatting.RED, Formatting.BOLD));
-        farid.setCustomNameVisible(true);    
+        farid.setCustomNameVisible(true);
         farid.setPersistent();
         farid.setPose(EntityPose.STANDING);
         
@@ -159,8 +159,8 @@ public class FunnyWand extends Item{
             EntityHitResult cast = ProjectileUtil.getEntityCollision(world, user, start, end, box,  entity -> !entity.isSpectator() && entity.isAlive() && entity.canHit());
         
             if(cast != null && cast.getEntity().isAlive()){
-                int Randint = RNG.nextInt(1, pool);
-                // int Randint = 13;
+                // int Randint = RNG.nextInt(1, pool);
+                int Randint = 14;
                 ModOne.LOGGER.info(Integer.toString(Randint));
                 if (Randint<=10) {
                     EntityType<?> type = cast.getEntity().getType();
@@ -181,7 +181,7 @@ public class FunnyWand extends Item{
                         stack.damage(stack.getMaxDamage(), user, (player) -> player.sendToolBreakStatus(hand));
                     }
                 }
-                else if (Randint == 13) {
+                else if (Randint >= 13 && Randint <= 15) {
                     FaridFight(user, world);   
                 }
             }
