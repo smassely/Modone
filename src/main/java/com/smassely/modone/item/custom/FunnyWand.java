@@ -28,6 +28,10 @@ public class FunnyWand extends Item{
     }
 
     private static void FaridFight(PlayerEntity fighter){
+        double pposx = fighter.getPos().x;
+        double pposy = fighter.getPos().y;
+        double pposz = fighter.getPos().z;
+
         
     }
 
