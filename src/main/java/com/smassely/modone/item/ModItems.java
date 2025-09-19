@@ -10,7 +10,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,7 +20,7 @@ public class ModItems {
 
     public static final Item DEADBONESWORD = registerItem("dead_bone_sword", new DeadBoneSwordItem(ToolMaterials.NETHERITE,5,-2.4f, new FabricItemSettings()));
     public static final Item CELESTITEEDGE = registerItem("celestite_edge", new CelesetiteEdgeItem(ToolMaterials.NETHERITE, 6, -2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item FUNNYWAND =registerItem("funny_wand", new FunnyWand(new FabricItemSettings().maxDamage(1000)));
+    public static final Item FUNNYWAND = registerItem("funny_wand", new FunnyWand(new FabricItemSettings().maxDamage(1000)));
 
     public static void addItemsToIngredientGroup(FabricItemGroupEntries entries){
 
