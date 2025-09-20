@@ -94,7 +94,7 @@ public class FunnyWand extends Item{
             fighter.getZ(),
         0f,
         0f   
-            );~
+            );
         } 
         else{
             fighter.setPitch(0f);

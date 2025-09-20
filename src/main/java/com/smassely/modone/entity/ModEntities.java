@@ -5,13 +5,15 @@ import javax.swing.text.html.parser.Entity;
 import com.smassely.modone.ModOne;
 import com.smassely.modone.entity.custom.FaridEntity;
 import com.smassely.modone.entity.custom.RadianceOrb;
+
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.mob.WardenEntity;
-import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
+
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -21,9 +23,9 @@ public class ModEntities {
             Registries.ENTITY_TYPE,
             new Identifier(ModOne.MOD_ID, "radiance_orb"),
             FabricEntityTypeBuilder.<RadianceOrb>create(SpawnGroup.MISC, RadianceOrb::new)
-                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)) // size of the projectile
-//                    .trackRangeBlocks(64)
-//                    .trackedUpdateRate(10)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f))
+                    .trackRangeBlocks(64)
+                    .trackedUpdateRate(10)
                     .build()
     );
     public static final EntityType<FaridEntity> FARID= Registry.register(Registries.ENTITY_TYPE,
@@ -34,6 +36,6 @@ public class ModEntities {
             .build());
 
     public static void register() {
-        // Ensure this class is loaded
+         FabricDefaultAttributeRegistry.register(FARID, WardenEntity.createHostileAttributes());
     }
 }
